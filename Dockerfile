@@ -13,9 +13,3 @@ RUN apk add -U gpgme
 RUN gpg || true
 
 ENTRYPOINT ["sh", "/entrypoint.sh"]
-
-FROM runtime as testEnv
-RUN apk add --no-cache coreutils ncurses
-ADD mock.sh /usr/bin/gpg
-
-FROM runtime
