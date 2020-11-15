@@ -11,5 +11,6 @@ FROM alpine:latest as runtime
 
 RUN apk add -U gpgme
 RUN gpg || true
+ADD entrypoint.sh /entrypoint.sh
 
 ENTRYPOINT ["sh", "/entrypoint.sh"]
